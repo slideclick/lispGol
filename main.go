@@ -5,6 +5,8 @@ import (
 	"log"
 	"net/http"
 	"net/http/httputil"
+
+	"github.com/slideclick/lispGol/stack"
 )
 
 func echo(w http.ResponseWriter, r *http.Request) {
@@ -18,6 +20,7 @@ func echo(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	stack.Test("haha")
 	http.HandleFunc("/", echo)
 	panic(http.ListenAndServe(":8080", nil))
 }
